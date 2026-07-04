@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color system from project spec */
+  --color-background: #09090b;
+  --color-card: #18181b;
+  --color-border: #27272a;
+  --color-foreground: #ffffff;
+  --color-muted: #a1a1aa;
+  --color-primary: #3b82f6;
+  --color-accent: #8b5cf6;
+
+  /* Font (set up now, swap the actual font import later if needed) */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
