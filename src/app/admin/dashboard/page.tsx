@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getLeads } from "@/src/lib/getLeads";
 import LeadActions from "@/src/components/LeadActions";
 
