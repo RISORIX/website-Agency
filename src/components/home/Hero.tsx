@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden"
+      className="relative overflow-x-clip"
     >
       {/* Background glows */}
       <div
@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* ── Left Content ── */}
-          <div className="flex flex-col items-start">
+          <div className="flex min-w-0 flex-col items-start">
 
             {/* Availability pill */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm text-zinc-300">
@@ -107,13 +107,7 @@ export default function Hero() {
           </div>
 
           {/* ── Right: Code Editor ── */}
-          {/*
-            On mobile the floating cards are hidden — they overflow and
-            crash the layout. They show from lg: up where there's room.
-            The editor itself is given top/bottom margin on mobile so it
-            has breathing room without relying on the floating cards.
-          */}
-          <div className="relative mt-2 px-1 pb-4 lg:mt-0 lg:px-0 lg:pb-8 lg:pt-8">
+          <div className="relative mt-2 min-w-0 px-1 pb-4 lg:mt-0 lg:px-0 lg:pb-8 lg:pt-8">
 
             {/* Floating "Shipped · Production" — desktop only */}
             <div
@@ -125,7 +119,7 @@ export default function Hero() {
             </div>
 
             {/* Editor */}
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-[#0d1117] shadow-2xl">
+            <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-zinc-800 bg-[#0d1117] shadow-2xl">
 
               {/* Title bar */}
               <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/60 px-4 py-3">
