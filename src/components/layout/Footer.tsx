@@ -15,7 +15,7 @@ const Links = [
   { name: "Projects", id: "Projects" },
   { name: "About", id: "About" },
   { name: "Pricing", id: "Pricing" },
-  { name: "Contact", id: "Contact" },
+  { name: "Contact", id: "contact" },
 ];
 
 const services = [
@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
 
             <button
-              onClick={() => scrollToSection("Contact")}
+              onClick={() => scrollToSection("contact")}
               className="relative mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all duration-300 hover:scale-105"
             >
               Get Started

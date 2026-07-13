@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { label: "Projects", id: "Projects" },
   { label: "About", id: "About" },
   { label: "Pricing", id: "Pricing" },
-  { label: "Contact", id: "Contact" },
+  { label: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
@@ -113,7 +113,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <button
-          onClick={() => handleNavClick("Contact")}
+          onClick={() => handleNavClick("contact")}
           className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition-all duration-300 hover:scale-105 md:inline-flex"
         >
           Book a Call

@@ -3,7 +3,7 @@ import Services from "@/src/app/(public)/Services/page";
 import Projects from "@/src/app/(public)/projects/page";
 import About from "@/src/app/(public)/About/page";
 import Pricing from "@/src/app/(public)/Pricing/page";
-import Contact from "@/src/components/ContactClient";
+import Contact from "@/src/app/(public)/contact/page";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
