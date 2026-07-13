@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const STACK = ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL"] as const;
+const STACK = ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB"] as const;
 
 const CODE_LINES = [
   { indent: 0, tokens: [{ c: "zinc-500", t: "// validated, typed, production-ready" }] },
@@ -25,7 +25,7 @@ const CODE_LINES = [
 export default function Hero() {
   return (
     <section
-      id="home"
+      id="Home"
       className="relative overflow-x-clip"
     >
       {/* Background glows */}
@@ -38,7 +38,7 @@ export default function Hero() {
         className="pointer-events-none absolute right-0 top-40 h-64 w-64 rounded-full bg-violet-500/10 blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-28 sm:px-6 sm:pt-32 lg:pb-28 lg:pt-36">
+      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 sm:pt-20 lg:pb-28 lg:pt-28">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* ── Left Content ── */}

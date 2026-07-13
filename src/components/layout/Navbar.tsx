@@ -150,7 +150,7 @@ export default function Navbar() {
             })}
 
             <button
-              onClick={() => handleNavClick("Contact")}
+              onClick={() => handleNavClick("contact")}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-all duration-300 hover:scale-105"
             >
               Book a Call
