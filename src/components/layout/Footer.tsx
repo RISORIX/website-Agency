@@ -7,11 +7,11 @@ import { FaGithub, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const NAV_LINKS = [
-  { name: "Home",     id: "home"     },
-  { name: "Services", id: "services" },
+  { name: "Home",     id: "Home"     },
+  { name: "Services", id: "Services" },
   { name: "Projects", id: "projects" },
-  { name: "About",    id: "about"    },
-  { name: "Pricing",  id: "pricing"  },
+  { name: "About",    id: "About"    },
+  { name: "Pricing",  id: "Pricing"  },
   { name: "Contact",  id: "contact"  },
 ];
 
