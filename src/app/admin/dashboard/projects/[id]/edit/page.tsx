@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { connectDB } from "@/src/db/connect";
 import Project from "@/src/models/Project";
-import ProjectForm from "@/src/app/admin/dashboard/projects/ProjectForm";
+import ProjectForm from "@/src/components/admin/ProjectForm";
 import type { ProjectRecord } from "@/src/lib/getProjects";
 
 export default async function EditProjectPage({
@@ -19,16 +19,16 @@ export default async function EditProjectPage({
   }
 
   const projectRecord: ProjectRecord = {
-    _id: String(project._id),
-    title: project.title,
-    category: project.category,
-    description: project.description,
-    image: project.image,
-    imagePublicId: project.imagePublicId,
-    github: project.github,
-    createdAt: new Date(project.createdAt).toISOString(),
-  };
-
+  _id: String(project._id),
+  title: project.title,
+  category: project.category,
+  description: project.description,
+  image: project.image,
+  imagePublicId: project.imagePublicId,
+  github: project.github,
+  section: project.section,
+  createdAt: new Date(project.createdAt).toISOString(),
+};
   return (
     <main className="min-h-screen bg-zinc-950 px-6 py-12">
       <div className="mx-auto max-w-2xl">
