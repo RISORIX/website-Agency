@@ -9,7 +9,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
 const NAV_LINKS = [
   { name: "Home",     id: "Home"     },
   { name: "Services", id: "Services" },
-  { name: "Projects", id: "projects" },
+  { name: "Projects", id: "Projects" },
   { name: "About",    id: "About"    },
   { name: "Pricing",  id: "Pricing"  },
   { name: "Contact",  id: "contact"  },
