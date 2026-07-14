@@ -25,6 +25,12 @@ export const projectFormSchema = z.object({
     .trim()
     .url("Please enter a valid URL")
     .max(300, "URL is too long"),
+  liveUrl: z
+    .string()
+    .trim()
+    .url("Please enter a valid Live URL")
+    .max(300, "URL is too long")
+    .or(z.literal("")),
   section: z.enum(PROJECT_SECTIONS, {
     message: "Please select a section",
   }),

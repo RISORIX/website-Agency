@@ -26,6 +26,7 @@ export default async function EditProjectPage({
   image: project.image,
   imagePublicId: project.imagePublicId,
   github: project.github,
+  liveUrl: project.liveUrl ?? "",
   section: project.section,
   createdAt: new Date(project.createdAt).toISOString(),
 };

@@ -42,6 +42,7 @@ export async function createProject(
     category: formData.get("category"),
     description: formData.get("description"),
     github: formData.get("github"),
+    liveUrl: formData.get("liveUrl"),
     section: formData.get("section"),
   };
 
@@ -78,6 +79,7 @@ export async function createProject(
       category: parsed.data.category,
       description: parsed.data.description,
       github: parsed.data.github,
+      liveUrl: parsed.data.liveUrl,
       section: parsed.data.section,
       image: uploadResult.url,
       imagePublicId: uploadResult.publicId,
@@ -105,6 +107,7 @@ export async function updateProject(
     category: formData.get("category"),
     description: formData.get("description"),
     github: formData.get("github"),
+    liveUrl: formData.get("liveUrl"),
     section: formData.get("section"),
   };
 
@@ -135,6 +138,7 @@ export async function updateProject(
       category: parsed.data.category,
       description: parsed.data.description,
       github: parsed.data.github,
+      liveUrl: parsed.data.liveUrl,
       section: parsed.data.section,
     };
 

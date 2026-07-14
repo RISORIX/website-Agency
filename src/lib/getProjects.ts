@@ -10,6 +10,7 @@ export type ProjectRecord = {
   image: string;
   imagePublicId: string;
   github: string;
+  liveUrl: string;
   section: ProjectSection;
   createdAt: string;
 };
@@ -23,6 +24,7 @@ function toProjectRecord(project: any): ProjectRecord {
     image: project.image,
     imagePublicId: project.imagePublicId,
     github: project.github,
+    liveUrl: project.liveUrl ?? "",
     section: project.section,
     createdAt: new Date(project.createdAt).toISOString(),
   };

@@ -7,9 +7,10 @@ export interface IProject extends Document {
   title: string;
   category: string;
   description: string;
-  image: string; // Cloudinary secure_url
-  imagePublicId: string; // Cloudinary public_id, needed to delete the file later
+  image: string;
+  imagePublicId: string;
   github: string;
+  liveUrl?: string;
   section: ProjectSection;
   createdAt: Date;
   updatedAt: Date;
@@ -48,6 +49,13 @@ const ProjectSchema = new Schema<IProject>(
       required: [true, "GitHub link is required"],
       trim: true,
     },
+
+    liveUrl: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+
     section: {
       type: String,
       required: [true, "Section is required"],
