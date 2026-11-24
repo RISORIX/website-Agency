@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AuthProvider from "@/src/components/AuthProvider";
 import "./globals.css";
+import { GoogleTagManager } from "@next/third-parties/google";
+
+<GoogleTagManager gtmId="GTM-KH2MBWZM" />
 
 const inter = Inter({
   subsets: ["latin"],
