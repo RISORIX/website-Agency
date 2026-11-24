@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin"],
+      disallow: "/admin",
     },
-    sitemap: "https://yourdomain.com/sitemap.xml", // TODO: replace with your real domain
+    sitemap: "https://risorix.netlify.app/sitemap.xml",
   };
 }
