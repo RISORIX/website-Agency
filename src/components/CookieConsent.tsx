@@ -8,6 +8,23 @@ type Consent = "granted" | "denied";
 
 const STORAGE_KEY = "risorix-analytics-consent";
 
+// Remove existing Google Analytics cookies
+function clearAnalyticsCookies() {
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0].trim();
+
+    if (name === "_ga" || name.startsWith("_ga_")) {
+      const expiry = "Max-Age=0; path=/";
+
+      document.cookie = `${name}=; ${expiry}`;
+
+      document.cookie =
+        `${name}=; ${expiry}; domain=${window.location.hostname}`;
+    }
+  });
+}
+
+// Update Google Tag Manager consent
 function updateConsent(consent: Consent) {
   const w = window as Window & {
     dataLayer?: unknown[];
@@ -42,7 +59,12 @@ export default function CookieConsent() {
 
     if (saved === "granted" || saved === "denied") {
       updateConsent(saved);
+
+      if (saved === "denied") {
+        clearAnalyticsCookies();
+      }
     } else {
+      clearAnalyticsCookies();
       setVisible(true);
     }
 
@@ -60,9 +82,13 @@ export default function CookieConsent() {
 
     setVisible(false);
 
-    // Reload after withdrawal to stop the initialized tag.
-    if (previous === "granted" && consent === "denied") {
-      window.location.reload();
+    if (consent === "denied") {
+      clearAnalyticsCookies();
+
+      // Reload to stop the previously initialized tag
+      if (previous === "granted") {
+        window.location.reload();
+      }
     }
   }
 
@@ -88,7 +114,6 @@ export default function CookieConsent() {
           className="fixed inset-x-0 bottom-0 z-50 w-full border-t border-white/10 bg-[#111318]/95 text-white shadow-2xl backdrop-blur-xl"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
-
             {/* Information */}
             <div className="flex items-start gap-4 lg:items-center">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-400">
@@ -110,7 +135,6 @@ export default function CookieConsent() {
 
             {/* Actions */}
             <div className="grid shrink-0 grid-cols-2 gap-3 lg:flex">
-
               <button
                 type="button"
                 onClick={() => handleConsent("denied")}
@@ -126,7 +150,6 @@ export default function CookieConsent() {
               >
                 Accept
               </button>
-
             </div>
           </div>
         </section>
